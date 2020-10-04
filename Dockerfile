@@ -25,6 +25,8 @@ RUN wget -O anope-$ANOPE_VERSION-source.tar.gz https://github.com/anope/anope/re
 WORKDIR /home/ircd/anope-$ANOPE_VERSION-source 
 RUN ln -sf extra/m_ssl_openssl.cpp modules/m_ssl_openssl.cpp && /usr/bin/expect /home/ircd/anope-make.expect && cd build && make && make install
 
+WORKDIR /
+
 USER root
 COPY supervisor_services.conf /etc/supervisor/conf.d/services.conf
 COPY supervisord.conf /etc/supervisord.conf

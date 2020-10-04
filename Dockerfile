@@ -26,6 +26,7 @@ RUN ln -sf extra/m_ssl_openssl.cpp modules/m_ssl_openssl.cpp && /usr/bin/expect 
 
 USER root
 COPY supervisor_services.conf /etc/supervisor/conf.d/services.conf
+COPY supervisord.conf /etc/supervisord.conf
 COPY unrealircd-entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["/usr/bin/supervisord"]

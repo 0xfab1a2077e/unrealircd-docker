@@ -7,11 +7,12 @@ ENV UNREAL_VERSION="5.0.6" \
 # install latest updates and configure alpine
 RUN apk update
 RUN apk upgrade
-RUN apk add --no-cache git make curl wget gnupg gcc g++ build-base openssl openssl-dev expect cmake supervisor
+RUN apk add --no-cache git make curl wget gnupg gcc g++ build-base openssl openssl-dev expect cmake supervisor python
 
 RUN addgroup -S ircd && adduser -S ircd -G ircd 
 
 COPY anope-make.expect /home/ircd/anope-make.expect
+COPY ircd_ssl.py /home/ircd/ircd_ssl.py
 
 USER ircd
 WORKDIR /home/ircd

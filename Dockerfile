@@ -7,7 +7,7 @@ ENV UNREAL_VERSION="5.0.6" \
 # install latest updates and configure alpine
 RUN apk update
 RUN apk upgrade
-RUN apk add --no-cache git make curl wget gnupg gcc g++ build-base openssl openssl-dev expect cmake
+RUN apk add --no-cache git make curl wget gnupg gcc g++ build-base openssl openssl-dev expect cmake supervisor
 
 RUN addgroup -S ircd && adduser -S ircd -G ircd 
 

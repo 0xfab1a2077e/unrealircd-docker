@@ -9,7 +9,7 @@ RUN apk update
 RUN apk upgrade
 RUN apk add --no-cache git make curl wget gnupg gcc g++ build-base openssl openssl-dev expect cmake supervisor python
 
-RUN addgroup -S ircd && adduser -S ircd -G ircd 
+RUN addgroup --gid 1001 -S ircd && adduser --uid 1001 -S ircd -G ircd 
 
 COPY anope-make.expect /home/ircd/anope-make.expect
 COPY ircd_ssl.py /home/ircd/ircd_ssl.py

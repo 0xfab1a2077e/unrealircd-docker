@@ -4,7 +4,7 @@ import sys
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 try:
-    sock.bind(('', 6667))
+    sock.bind(('', 6669))
 except socket.error as msg:
     print 'Bind failed. Error code: ' + str(msg[0]) + ', message: ' + msg[1]
     sys.exit()
